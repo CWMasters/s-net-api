@@ -45,19 +45,19 @@ const thoughtController = {
             .then(({ _id }) => {
                 return User.findOneAndUpdate(
                     { _id: body.userId },
-                    { $push: { thought: _id } },
+                    { $push: { thoughts: _id } },
                     { new: true }
                 );
             })
             .then(dbThoughtData => {
                 console.log(dbThoughtData);
                 if(!dbThoughtData) {
-                    res.status(404).json({ message: 'No thought with this id!' });
+                    res.status(404).json({ message: 'No user with this id!' });
                     return;
                 }
                 res.json(dbThoughtData);
             })
-            .catch(err => res.json(err));
+            .catch(err => res.status(400).json(err));
     },
 
 
@@ -188,7 +188,7 @@ const thoughtController = {
     deleteReaction({ params }, res) {
         User.findOneAndUpdate(
             { _id: params.id },
-            { $push: { reactions: { reactionId: params.reactionId } } },
+            { $pull: { reactions: { reactionId: params.reactionId } } },
             { new: true, runValidators: true }
         )
 
