@@ -38,7 +38,7 @@ const userController = {
         });  
     },
 
-    
+
     // add a user
     addUser({ body }, res) {
         User.create(body)
@@ -92,7 +92,7 @@ const userController = {
     
         .then(dbUserData => {
             if(!dbUserData) {
-                res.status(404).json({ message: 'Non user with this id!' });
+                res.status(404).json({ message: 'No user with this id!' });
                 return;
             }
             res.json(dbUserData);
