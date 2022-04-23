@@ -2,13 +2,13 @@ const { Thought, User } = require('../models');
 
 const thoughtController = {
 
-    // get all thought
+    // all thoughts
     getAllThought(req,res) {
         Thought.find({})
-            .populate({
-                path: 'reactions',
-                select: '-__v'
-            })
+            // .populate({
+            //     path: 'reactions',
+            //     select: '-__v'
+            // })
             .select('-__v')
             .sort({ _id: -1 })
             .then(dbThoughtData => res.json(dbThoughtData))
@@ -186,7 +186,7 @@ const thoughtController = {
 
     // delete a reaction (delete friend eg and pull the reaction)
     deleteReaction({ params }, res) {
-        User.findOneAndDelete(
+        User.findOneAndUpdate(
             { _id: params.id },
             { $push: { reactions: { reactionId: params.reactionId } } },
             { new: true, runValidators: true }
