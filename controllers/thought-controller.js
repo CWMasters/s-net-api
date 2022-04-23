@@ -184,7 +184,17 @@ const thoughtController = {
 
 
 
-    // delete a reaction
+    // delete a reaction (delete friend eg and pull the reaction)
+    deleteReaction({ params }, res) {
+        User.findOneAndDelete(
+            { _id: params.id },
+            { $push: { reactions: { reactionId: params.reactionId } } },
+            { new: true, runValidators: true }
+        )
+
+        .then(dbThoughtData => res.json(dbThoughtData))
+        .catch(err => res.json(err));
+    }
 
 
 
