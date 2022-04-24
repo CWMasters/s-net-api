@@ -20,6 +20,9 @@ s-net-api is an api that holds/retrives data for a Social Network platform. It a
 
 ## Screenshots
 
+<img width="1243" alt="Screen Shot 2022-04-24 at 5 54 05 AM" src="https://user-images.githubusercontent.com/95546410/164977607-8e655fdd-b4d2-4ca4-9ee3-c18d687e1dd4.png">
+<img width="1245" alt="Screen Shot 2022-04-24 at 5 54 13 AM" src="https://user-images.githubusercontent.com/95546410/164977609-a79fcd79-02a6-4674-aa59-3524e5dc8b7f.png">
+
 
 ## Contribution
 
