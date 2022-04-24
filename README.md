@@ -1,4 +1,4 @@
-# s-net-api
+# S Net Api
 
 ## Description
 
@@ -6,7 +6,8 @@ s-net-api is an api that holds/retrives data for a Social Network platform. It a
 
 ## Installation
 
-Run ```npm i``` in terminal to install dependencies.
+* Clone the repository.
+* Run ```npm i``` in terminal to install dependencies.
 
 ## Technologies used
 
@@ -22,4 +23,4 @@ Run ```npm i``` in terminal to install dependencies.
 
 ## Contribution
 
-Written and tested by Chris Masters
+Written and tested by Chris Masters.
