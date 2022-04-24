@@ -181,12 +181,12 @@ const thoughtController = {
     //     .catch(err => res.status(400).json(err));
     // },
 
-
+    
 
 
     // delete a reaction (delete friend eg and pull the reaction)
     deleteReaction({ params }, res) {
-        User.findOneAndUpdate(
+        Thought.findOneAndUpdate(
             { _id: params.id },
             { $pull: { reactions: { reactionId: params.reactionId } } },
             { new: true, runValidators: true }
@@ -194,9 +194,8 @@ const thoughtController = {
 
         .then(dbThoughtData => res.json(dbThoughtData))
         .catch(err => res.json(err));
-    }
-
-
+      }
+    
 
     // deleteFriend({ params }, res) {
     //     User.findOneAndDelete(

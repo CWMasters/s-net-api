@@ -28,7 +28,7 @@ router.route('/:id/reactions')
       .post(addReaction);
 
 // delete a reaction by id
-router.route('/:id/reactions/:reactionsId')
+router.route('/:id/reactions/:reactionId')
       .delete(deleteReaction);
 
 
